@@ -22,7 +22,12 @@
 body {
     padding: 0;
     margin: 0;
-    background: linear-gradient(135deg, rgba(0, 0, 0, 1), rgba(20, 20, 40, 0.9), rgba(60, 30, 150, 0.8), rgba(90, 40, 120, 0.8));
+    background: linear-gradient(135deg, 
+    rgba(5, 5, 15, 1),  /* Deep black-blue */
+    rgba(25, 25, 45, 0.95),  /* Dark navy */
+    rgba(55, 25, 120, 0.85),  /* Rich indigo */
+    rgba(80, 35, 100, 0.8)  /* Dark violet */
+);
     background-size: 300% 300%;
     animation: background-drift 80s ease-in-out infinite; /* Subtle, slow animation */
     width: 100vw;

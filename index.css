@@ -229,7 +229,7 @@ body::before {
 }
 
 #middle h1 {
-    font-family: 'Aeonik Condensed', sans-serif;
+    font-family: 'Aeonik', sans-serif;
     font-size: 4.375rem;
     background: none;
     color: var(--text-primary); /* Now dark */
@@ -327,6 +327,7 @@ body::before {
     max-height: 100vh;
     overflow-y: auto;
     display: none;
+    background:#F6642D;
 }
 
 .container div {
@@ -341,14 +342,14 @@ body::before {
 
 
 .container h1 {
-    font-family: 'Aeonik Condensed', sans-serif;
+    font-family: 'Aeonik', sans-serif;
     font-size: 3.75rem;
     background: none;
     color: var(--text-primary); /* Now dark */
 }
 
 .container h2 {
-    font-family: 'Aeonik Condensed', sans-serif;
+    font-family: 'Aeonik', sans-serif;
     font-size: 1.5rem;
     color: var(--text-secondary);
     margin-bottom: 1rem;
@@ -369,9 +370,6 @@ body::before {
     margin: 2rem auto;
     padding: 1.5rem;
     max-width: 700px;
-    background: rgba(0, 0, 0, 0.2); /* Soft, subtle background */
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 /* Title Styling: H3 Consistent with Other Titles */

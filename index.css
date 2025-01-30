@@ -321,7 +321,7 @@ body::before {
     height: 90vh;
     padding: 5vh 5vw;
     background: var(--navy);
-    color: var(--text-primary);
+    color: white;
     z-index: 9;
     position: fixed;
     max-height: 100vh;
@@ -363,6 +363,10 @@ body::before {
     margin-bottom: 1.5rem;
 }
 
+.container li {
+    font-family: 'Aeonik', sans-serif;
+    color: #fff;
+}
 
 
 /* Staking Benefits Section */

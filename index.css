@@ -1,0 +1,587 @@
+/* Import fonts */
+@import url('https://fonts.googleapis.com/css2?family=Rubik+One&family=Rubik:wght@300;400;500&display=swap');
+
+/* Root variables */
+:root {
+    --gradient-start: #F6642D;
+    --gradient-middle: #D42E58;
+    --gradient-end: #5A2FBA;
+    --navy: #001F44;
+    --text-primary: #FFFFFF;
+    --text-secondary: rgba(255, 255, 255, 0.9);
+    --text-muted: rgba(255, 255, 255, 0.7);
+    --bg-overlay: rgba(0, 0, 0, 0.1);
+    --bg-card: rgb(0 0 0 / 30%);
+}
+
+
+
+
+
+/* Gradient background starting with black transitioning to purple */
+body {
+    padding: 0;
+    margin: 0;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 1), rgba(20, 20, 40, 0.9), rgba(60, 30, 150, 0.8), rgba(90, 40, 120, 0.8));
+    background-size: 300% 300%;
+    animation: background-drift 80s ease-in-out infinite; /* Subtle, slow animation */
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    font-family: 'Rubik', sans-serif;
+    font-weight: 300;
+    color: var(--text-primary);
+    backdrop-filter: blur(25px); /* Strong blur for a misty effect */
+    -webkit-backdrop-filter: blur(25px); /* Safari compatibility */
+}
+
+/* Subtle background animation */
+@keyframes background-drift {
+    0% {
+        background-position: 0% 50%;
+    }
+    25% {
+        background-position: 50% 75%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    75% {
+        background-position: 50% 25%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Overlay for consistent depth */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6); /* Slightly darker overlay for moodiness */
+    z-index: -1;
+}
+
+
+
+
+
+
+/* Updated Node Card Styling */
+.node-card img {
+    width: 26%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 0.75rem;
+}
+
+.node-card:hover h4 {
+    background: linear-gradient(to right, var(--gradient-start), var(--gradient-middle), var(--gradient-end));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: background 0.3s ease-in-out;
+}
+
+.node-card:hover img {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+}
+
+
+
+/* Node Location Styling */
+.node-location {
+    font-family: 'Rubik', sans-serif;
+    font-size: 0.875rem;
+    color: var(--text-muted);
+    margin-top: 0.25rem;
+  }
+  
+  /* Updated Hover Effect */
+  .node-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  }
+
+
+
+.status-widget-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 2rem 0;
+  }
+  
+  .status-widget-container iframe {
+    margin: 0 auto;
+    background: transparent;
+  }
+/* Loading screen */
+#loading {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    background: var(--navy);
+    z-index: 999;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+#spinner {
+    animation: rotate 0.56s infinite linear;
+    width: 50px;
+    height: 50px;
+    border: 12px solid #fff;
+    border-bottom: 12px solid var(--gradient-middle);
+    border-radius: 50%;
+    margin: 0;
+}
+
+@keyframes rotate {
+    0% {transform: rotate(0deg);}
+    100% {transform: rotate(360deg);}
+}
+
+/* Box animations */
+#box {
+    width: 100vw;
+    height: 100vh;
+    z-index: 9;
+    position: fixed;
+    top: 0;
+}
+
+#box div {
+    width: 16.66vw;
+    height: 100%;
+    display: inline-block;
+}
+
+.box1 {
+    background: var(--gradient-middle);
+}
+
+.box2 {
+    background: var(--gradient-start);
+    margin-left: -5px;
+}
+
+/* Navigation */
+#menu {
+    width: 100%;
+    text-align: center;
+    margin: 2rem 0;
+    display: none;
+}
+
+#menu a {
+    margin: 0 6%;
+    font-size: 1.125rem;
+    color: var(--text-primary);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+#menu a:hover {
+    color: var(--gradient-middle);
+}
+
+/* Middle section */
+#middle {
+    width: 100vw;
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    position: fixed;
+    top: 0;
+    text-align: center;
+    z-index: 1;
+    color: var(--text-primary);
+    padding: 5vh 0;
+    overflow-y: auto;
+}
+
+#middle h1 {
+    font-family: 'Rubik One', sans-serif;
+    font-size: 4.375rem;
+    background: linear-gradient(to right, var(--gradient-middle), var(--gradient-start));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 1rem;
+}
+
+#middle h2 {
+    font-family: 'Rubik', sans-serif;
+    font-size: 1.5rem;
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+    padding: 0 2rem;
+}
+
+/* Navigation buttons */
+#work, #about {
+    width: 10vw;
+    height: 10vw;
+    text-align: center;
+    font-size: 1.5625rem;
+    font-family: 'Rubik', sans-serif;
+    background: transparent;
+    color: var(--text-primary);
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    z-index: 4;
+    transition: 0.4s ease-in-out;
+    text-decoration: none;
+}
+
+#work {
+    transform: rotate(90deg);
+    right: 0;
+    bottom: 40vh;
+    border-radius: 0 0 100px 100px;
+}
+
+#about {
+    transform: rotate(-90deg);
+    left: 0;
+    bottom: 40vh;
+    border-radius: 0 0 100px 100px;
+}
+
+#work:hover, #about:hover {
+    background: var(--gradient-middle);
+    cursor: pointer;
+}
+
+/* Social icons */
+#middle table {
+    width: auto;
+    margin: 2rem auto;
+    border-collapse: collapse;
+}
+
+#middle table tr td {
+    text-align: center;
+    padding: 0 0.5rem;
+}
+
+.social {
+    color: var(--text-secondary);
+    font-size: 1.5rem;
+    transition: 0.4s ease-in-out;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block; /* Changed from block to inline-block */
+}
+
+.social:hover {
+    cursor: pointer;
+    color: var(--gradient-middle);
+}
+
+/* Remove default link color */
+.social i {
+    color: inherit; /* Ensures icon inherits the color from parent */
+}
+
+/* Content containers */
+.container {
+    width: 90vw;
+    height: 90vh;
+    padding: 5vh 5vw;
+    background: var(--navy);
+    color: var(--text-primary);
+    z-index: 9;
+    position: fixed;
+    max-height: 100vh;
+    overflow-y: auto;
+    display: none;
+}
+
+.container div {
+    font-size: 1.5625rem;
+    margin: 20px 0;
+    transition: 0.4s ease-in-out;
+}
+
+.container section {
+    margin: 8vh 0;
+}
+
+.container h1 {
+    font-family: 'Rubik One', sans-serif;
+    font-size: 3.75rem;
+    background: linear-gradient(to right, var(--gradient-middle), var(--gradient-start));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.container h2 {
+    font-family: 'Rubik One', sans-serif;
+    font-size: 1.5rem;
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+}
+
+.container p {
+    font-size: 1.125rem;
+    line-height: 1.6;
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+}
+
+
+
+/* Staking Benefits Section */
+.staking-benefits {
+    margin: 2rem auto;
+    padding: 1.5rem;
+    max-width: 700px;
+    background: rgba(0, 0, 0, 0.2); /* Soft, subtle background */
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Title Styling: H3 Consistent with Other Titles */
+.staking-benefits h3 {
+    font-family: 'Rubik', sans-serif;
+    font-size: 1.5rem; /* Consistent with other section titles */
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+/* Single Column List */
+.staking-benefits ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.staking-benefits li {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+    font-family: 'Rubik', sans-serif;
+    font-size: 1.125rem; /* Clean and readable size */
+    color: var(--text-primary);
+}
+
+.staking-benefits i {
+    font-size: 1.25rem;
+    color: var(--gradient-start); /* Icon color consistent with theme */
+    flex-shrink: 0;
+}
+
+
+
+/* WMTx styling */
+.wmtx {
+    font-family: 'Rubik One', sans-serif;
+    color: var(--text-primary);
+}
+
+/* Staking section */
+.staking-section {
+    margin: 0 auto;
+    max-width: 1200px;
+    padding: 0 1rem;
+}
+
+/* Node grid layout */
+.node-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Default to 3 items on desktops */
+    gap: 1rem;
+    margin: 0 auto;
+}
+
+@media (max-width: 1024px) {
+    .node-grid {
+        grid-template-columns: repeat(2, 1fr); /* Adjust to 2 items for tablets */
+    }
+}
+
+@media (max-width: 640px) {
+    .node-grid {
+        grid-template-columns: repeat(1, 1fr); /* 1 item per row for mobile */
+    }
+}
+
+/* Node cards */
+.node-card {
+    background: rgba(0, 0, 0, 0.2); /* Lighter black background */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    padding: 0.75rem;
+    text-align: center;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+
+
+
+/* Special Border for the New Node */
+.special-border {
+    border: 2px dashed var(--gradient-start);
+}
+
+.node-card:hover h4 {
+    background: linear-gradient(to right, #F6642D, var(--gradient-middle), var(--gradient-end));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: background 0.3s ease-in-out;
+}
+
+.node-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    border: 2px solid transparent;
+    background-clip: padding-box;
+    background: rgba(0, 0, 0, 0.4); /* Darker black on hover */
+    transition: all 0.3s ease-in-out;
+    border-image: linear-gradient(to right, #F6642D, #D42E58, #5A2FBA);
+    border-image-slice: 1;
+}
+
+
+.node-card h4 {
+    font-family: 'Rubik One', sans-serif;
+    font-size: 1.125rem;
+    color: #F6642D; /* Base color updated */
+    margin: 0 0 0.25rem 0;
+}
+
+.node-card .node-name {
+  font-family: 'Rubik', sans-serif;
+  font-size: 1rem; /* Larger font size for the pool name */
+  color: var(--text-secondary);
+  margin: 0;
+  font-weight: 500;
+}
+
+/* Particles */
+#particles-js {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--text-primary);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--gradient-middle);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--gradient-start);
+}
+
+/* Selection */
+::selection {
+    color: var(--text-primary);
+    background: var(--gradient-middle);
+}
+
+/* Responsive design */
+@media (max-width: 1024px) {
+    .node-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    #middle h1 {
+        font-size: 3.5rem;
+    }
+}
+
+@media (max-width: 800px) {
+    #work, #about {
+        display: none;
+    }
+    
+    #middle {
+        width: 90vw;
+        padding: 5vh 5vw;
+    }
+    
+    #middle h1 {
+        font-size: 2.5rem;
+    }
+    
+    #middle h2 {
+        font-size: 1.25rem;
+    }
+    
+    #menu {
+        display: inline-block;
+    }
+    
+    .onlywide {
+        display: none !important;
+    }
+    
+    .box2 {
+        margin-left: 0 !important;
+    }
+    
+    #box div {
+        width: 100%;
+    }
+    
+    .container h1 {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 640px) {
+    .node-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    #middle h1 {
+        font-size: 2rem;
+    }
+    
+    #middle h2 {
+        font-size: 1.125rem;
+    }
+    .staking-benefits h3 {
+        font-size: 1.25rem; /* Adjust to balance with H2 */
+    }
+
+    .staking-benefits li {
+        font-size: 1rem; /* Reduced size for better hierarchy */
+    }
+    
+    .node-card {
+        padding: 0.5rem;
+    }
+    
+    .node-card h4 {
+        font-size: 1rem;
+    }
+
+
+    .social {
+        font-size: 1.25rem;
+    }
+}

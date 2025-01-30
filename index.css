@@ -1,44 +1,58 @@
 /* Import fonts */
-@import url('https://fonts.googleapis.com/css2?family=Rubik+One&family=Rubik:wght@300;400;500&display=swap');
+@font-face {
+    font-family: 'Aeonik';
+    src: url('https://worldmobile.club/uploads/default/original/1X/55fc9e1587be9bb25dcf0295a5d258e7a586e6bd.otf') format('opentype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Aeonik';
+    src: url('https://worldmobile.club/uploads/default/original/1X/2a3b954437d34dfee57b46f092f7e222d805d445.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Aeonik Condensed';
+    src: url('https://worldmobile.club/uploads/default/original/1X/4e21838cff760a5f72b6e3bde8c7dd410e21ce43.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
 
 /* Root variables */
 :root {
-    --gradient-start: #F6642D;
+    --gradient-start: #F6642D;  /* Keep accent colors */
     --gradient-middle: #D42E58;
     --gradient-end: #5A2FBA;
-    --navy: #001F44;
-    --text-primary: #FFFFFF;
-    --text-secondary: rgba(255, 255, 255, 0.9);
-    --text-muted: rgba(255, 255, 255, 0.7);
-    --bg-overlay: rgba(0, 0, 0, 0.1);
-    --bg-card: rgb(0 0 0 / 30%);
+    
+    --background: #FFFFFF; /* White Background */
+    --text-primary: #1A1A1A; /* Dark text */
+    --text-secondary: rgba(0, 0, 0, 0.7); /* Soft dark gray */
+    --text-muted: rgba(0, 0, 0, 0.5); /* Lighter muted text */
+    
+    --bg-overlay: rgba(255, 255, 255, 0.3); /* Light overlay */
+    --bg-card: rgb(255, 255, 255, 0.9); /* Light background for cards */
 }
 
 
 
 
 
-/* Gradient background starting with black transitioning to purple */
+
 body {
     padding: 0;
     margin: 0;
-    background: linear-gradient(135deg, 
-    rgba(5, 5, 15, 1),  /* Deep black-blue */
-    rgba(25, 25, 45, 0.95),  /* Dark navy */
-    rgba(55, 25, 120, 0.85),  /* Rich indigo */
-    rgba(80, 35, 100, 0.8)  /* Dark violet */
-);
-    background-size: 300% 300%;
-    animation: background-drift 80s ease-in-out infinite; /* Subtle, slow animation */
+    background: var(--background); /* Now white */
     width: 100vw;
     height: 100vh;
     overflow: hidden;
-    font-family: 'Rubik', sans-serif;
+    font-family: 'Aeonik', sans-serif;
     font-weight: 300;
-    color: var(--text-primary);
-    backdrop-filter: blur(25px); /* Strong blur for a misty effect */
-    -webkit-backdrop-filter: blur(25px); /* Safari compatibility */
+    color: var(--text-primary); /* Now dark text */
 }
+
 
 /* Subtle background animation */
 @keyframes background-drift {
@@ -67,7 +81,7 @@ body::before {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.6); /* Slightly darker overlay for moodiness */
+    background: none; /* No overlay */
     z-index: -1;
 }
 
@@ -100,12 +114,12 @@ body::before {
 
 /* Node Location Styling */
 .node-location {
-    font-family: 'Rubik', sans-serif;
+    font-family: 'Aeonik', sans-serif;
     font-size: 0.875rem;
     color: var(--text-muted);
     margin-top: 0.25rem;
-  }
-  
+}
+
   /* Updated Hover Effect */
   .node-card:hover {
     transform: translateY(-4px);
@@ -188,13 +202,14 @@ body::before {
 #menu a {
     margin: 0 6%;
     font-size: 1.125rem;
-    color: var(--text-primary);
+    color: var(--text-primary); /* Now dark text */
     text-decoration: none;
-    transition: color 0.3s ease;
+    transition: color 0.3s ease, text-decoration 0.3s ease-in-out;
 }
 
 #menu a:hover {
     color: var(--gradient-middle);
+    text-decoration: underline; /* Adds a hover effect */
 }
 
 /* Middle section */
@@ -214,18 +229,17 @@ body::before {
 }
 
 #middle h1 {
-    font-family: 'Rubik One', sans-serif;
+    font-family: 'Aeonik Condensed', sans-serif;
     font-size: 4.375rem;
-    background: linear-gradient(to right, var(--gradient-middle), var(--gradient-start));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    background: none;
+    color: var(--text-primary); /* Now dark */
     margin-bottom: 1rem;
 }
 
 #middle h2 {
-    font-family: 'Rubik', sans-serif;
+    font-family: 'Aeonik', sans-serif;
     font-size: 1.5rem;
-    color: var(--text-secondary);
+    color: var(--text-secondary); /* Now soft dark gray */
     margin-bottom: 2rem;
     padding: 0 2rem;
 }
@@ -236,15 +250,16 @@ body::before {
     height: 10vw;
     text-align: center;
     font-size: 1.5625rem;
-    font-family: 'Rubik', sans-serif;
-    background: transparent;
-    color: var(--text-primary);
+    font-family: 'Aeonik', sans-serif;
+    background: var(--bg-card); /* Light background */
+    color: var(--text-primary); /* Dark text */
+    border: 2px solid var(--gradient-middle); /* Gradient border */
     position: fixed;
     display: flex;
     flex-direction: column;
     justify-content: center;
     z-index: 4;
-    transition: 0.4s ease-in-out;
+    transition: background 0.4s ease-in-out, color 0.4s ease-in-out;
     text-decoration: none;
 }
 
@@ -263,7 +278,8 @@ body::before {
 }
 
 #work:hover, #about:hover {
-    background: var(--gradient-middle);
+    background: var(--gradient-middle); /* Gradient background on hover */
+    color: #FFFFFF; /* Light text on hover */
     cursor: pointer;
 }
 
@@ -280,17 +296,18 @@ body::before {
 }
 
 .social {
-    color: var(--text-secondary);
+    color: var(--text-primary); /* Dark icon color */
     font-size: 1.5rem;
     transition: 0.4s ease-in-out;
     text-align: center;
     text-decoration: none;
-    display: inline-block; /* Changed from block to inline-block */
+    display: inline-block;
 }
 
 .social:hover {
     cursor: pointer;
-    color: var(--gradient-middle);
+    color: var(--gradient-middle); /* Gradient color on hover */
+    transform: scale(1.1); /* Slight zoom effect */
 }
 
 /* Remove default link color */
@@ -322,16 +339,16 @@ body::before {
     margin: 8vh 0;
 }
 
+
 .container h1 {
-    font-family: 'Rubik One', sans-serif;
+    font-family: 'Aeonik Condensed', sans-serif;
     font-size: 3.75rem;
-    background: linear-gradient(to right, var(--gradient-middle), var(--gradient-start));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    background: none;
+    color: var(--text-primary); /* Now dark */
 }
 
 .container h2 {
-    font-family: 'Rubik One', sans-serif;
+    font-family: 'Aeonik Condensed', sans-serif;
     font-size: 1.5rem;
     color: var(--text-secondary);
     margin-bottom: 1rem;
@@ -340,6 +357,7 @@ body::before {
 .container p {
     font-size: 1.125rem;
     line-height: 1.6;
+    font-family: 'Aeonik', sans-serif;
     color: var(--text-secondary);
     margin-bottom: 1.5rem;
 }
@@ -358,8 +376,8 @@ body::before {
 
 /* Title Styling: H3 Consistent with Other Titles */
 .staking-benefits h3 {
-    font-family: 'Rubik', sans-serif;
-    font-size: 1.5rem; /* Consistent with other section titles */
+    font-family: 'Aeonik', sans-serif;
+    font-size: 1.5rem;
     color: var(--text-secondary);
     margin-bottom: 1.5rem;
     text-align: center;
@@ -378,8 +396,8 @@ body::before {
     align-items: center;
     gap: 0.75rem;
     margin-bottom: 1rem;
-    font-family: 'Rubik', sans-serif;
-    font-size: 1.125rem; /* Clean and readable size */
+    font-family: 'Aeonik', sans-serif;
+    font-size: 1.125rem;
     color: var(--text-primary);
 }
 
@@ -393,7 +411,7 @@ body::before {
 
 /* WMTx styling */
 .wmtx {
-    font-family: 'Rubik One', sans-serif;
+    font-family: 'Aeonik Condensed', sans-serif;
     color: var(--text-primary);
 }
 
@@ -426,20 +444,21 @@ body::before {
 
 /* Node cards */
 .node-card {
-    background: rgba(0, 0, 0, 0.2); /* Lighter black background */
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: var(--bg-card); /* Now white */
+    border: 1px solid rgba(0, 0, 0, 0.1); /* Soft border */
     border-radius: 8px;
     padding: 0.75rem;
     text-align: center;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1); /* Soft shadow */
     transition: background 0.3s ease, transform 0.3s ease;
 }
 
 
 
-
 /* Special Border for the New Node */
 .special-border {
-    border: 2px dashed var(--gradient-start);
+    border: 2px solid var(--gradient-start);
+    padding: 0.5rem;
 }
 
 .node-card:hover h4 {
@@ -451,29 +470,25 @@ body::before {
 
 .node-card:hover {
     transform: translateY(-4px);
-    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
-    border: 2px solid transparent;
-    background-clip: padding-box;
-    background: rgba(0, 0, 0, 0.4); /* Darker black on hover */
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1); /* Softer shadow */
+    background: rgba(255, 255, 255, 0.8); /* Lighter hover effect */
+    border: 2px solid var(--gradient-middle); /* Gradient border */
     transition: all 0.3s ease-in-out;
-    border-image: linear-gradient(to right, #F6642D, #D42E58, #5A2FBA);
-    border-image-slice: 1;
 }
 
 
 .node-card h4 {
-    font-family: 'Rubik One', sans-serif;
+    font-family: 'Aeonik Condensed', sans-serif;
     font-size: 1.125rem;
-    color: #F6642D; /* Base color updated */
+    color: #F6642D;
     margin: 0 0 0.25rem 0;
 }
-
 .node-card .node-name {
-  font-family: 'Rubik', sans-serif;
-  font-size: 1rem; /* Larger font size for the pool name */
-  color: var(--text-secondary);
-  margin: 0;
-  font-weight: 500;
+    font-family: 'Aeonik', sans-serif;
+    font-size: 1rem;
+    color: var(--text-secondary);
+    margin: 0;
+    font-weight: 500;
 }
 
 /* Particles */
@@ -485,16 +500,17 @@ body::before {
 
 /* Scrollbar */
 ::-webkit-scrollbar {
-    width: 5px;
-    height: 5px;
+    width: 6px;
+    height: 6px;
 }
 
 ::-webkit-scrollbar-track {
-    background: var(--text-primary);
+    background: #EAEAEA; /* Light track */
 }
 
 ::-webkit-scrollbar-thumb {
     background: var(--gradient-middle);
+    border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
@@ -503,8 +519,8 @@ body::before {
 
 /* Selection */
 ::selection {
-    color: var(--text-primary);
-    background: var(--gradient-middle);
+    color: #FFFFFF; /* White text */
+    background: var(--gradient-middle); /* Accent color */
 }
 
 /* Responsive design */

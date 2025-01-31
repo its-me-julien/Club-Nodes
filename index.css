@@ -395,7 +395,7 @@ body::before {
 }
 
 .staking-benefits li {
-    display: flex;
+    display: block;
     align-items: center;
     gap: 0.75rem;
     margin-bottom: 1rem;
@@ -614,6 +614,7 @@ body::before {
 
     .staking-benefits li {
         font-size: 1rem; /* Reduced size for better hierarchy */
+
     }
     
     .node-card {

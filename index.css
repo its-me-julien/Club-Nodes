@@ -629,9 +629,3 @@ body::before {
         font-size: 1.25rem;
     }
 }
-
-
-#loading {
-    display: none; /* Hidden by default */
-}
-

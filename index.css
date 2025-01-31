@@ -234,6 +234,7 @@ body::before {
     background: none;
     color: var(--text-primary); /* Now dark */
     margin-bottom: 1rem;
+    font-weight: 200;
 }
 
 #middle h2 {
@@ -463,6 +464,7 @@ body::before {
     background-clip: text;
     text-fill-color: transparent;
     font-family: 'aeonik', sans-serif;
+    font-weight:800;
   }
 
   .gradient-icon {

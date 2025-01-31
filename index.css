@@ -638,13 +638,6 @@ body::before {
 /* Show #loading only on mobile screens (max-width: 768px) */
 @media (max-width: 768px) {
     #loading {
-        display: flex; /* Show loading screen */
-        width: 100vw;
-        height: 100vh;
-        position: fixed;
-        background: white; /* Or your preferred background */
-        z-index: 999;
-        justify-content: center;
-        align-items: center;
+        display: block; /* Show loading screen */
     }
 }

@@ -342,7 +342,7 @@ body::before {
 
 
 .container h1 {
-    font-family: 'Aeonik', sans-serif;
+    font-family: 'Aeonik-condensed', sans-serif;
     font-size: 3.75rem;
     background: none;
     color: #fff;
@@ -462,6 +462,7 @@ body::before {
     -webkit-text-fill-color: transparent;
     background-clip: text;
     text-fill-color: transparent;
+    font-family: 'aeonik', sans-serif;
   }
 
   .gradient-icon {

@@ -47,7 +47,8 @@ body {
     background: var(--background); /* Now white */
     width: 100vw;
     height: 100vh;
-    overflow: hidden;
+    overflow-x: hidden; /* Prevents horizontal scrolling but allows vertical */
+    overflow-y: auto;
     font-family: 'Aeonik', sans-serif;
     font-weight: 300;
     color: var(--text-primary); /* Now dark text */

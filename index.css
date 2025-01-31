@@ -229,7 +229,7 @@ body::before {
 }
 
 #middle h1 {
-    font-family: 'Aeonik', sans-serif;
+    font-family: 'Aeonik-condensed', sans-serif;
     font-size: 4.375rem;
     background: none;
     color: var(--text-primary); /* Now dark */

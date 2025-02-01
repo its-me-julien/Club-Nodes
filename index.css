@@ -4,6 +4,7 @@
     src: url('https://worldmobile.club/uploads/default/original/1X/55fc9e1587be9bb25dcf0295a5d258e7a586e6bd.otf') format('opentype');
     font-weight: bold;
     font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
@@ -11,6 +12,7 @@
     src: url('https://worldmobile.club/uploads/default/original/1X/2a3b954437d34dfee57b46f092f7e222d805d445.otf') format('opentype');
     font-weight: normal;
     font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
@@ -18,6 +20,7 @@
     src: url('https://worldmobile.club/uploads/default/original/1X/4e21838cff760a5f72b6e3bde8c7dd410e21ce43.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
+    font-display: swap;
 }
 
 
@@ -92,8 +95,10 @@ body::before {
 
 /* Updated Node Card Styling */
 .node-card img {
-    width: 26%;
+    width: 100%;  /* Let the image fill its container */
     height: auto;
+    aspect-ratio: 1 / 1; /* Makes it a square */
+    object-fit: cover;   /* Ensures the image covers the container nicely */
     border-radius: 8px;
     margin-bottom: 0.75rem;
 }
@@ -447,13 +452,14 @@ body::before {
 
 /* Node cards */
 .node-card {
-    background: var(--bg-card); /* Now white */
-    border: 1px solid rgba(0, 0, 0, 0.1); /* Soft border */
+    background: var(--bg-card);
+    border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 8px;
     padding: 0.75rem;
     text-align: center;
-    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
     transition: background 0.3s ease, transform 0.3s ease;
+    min-height: 250px; /* Adjust this value as needed */
 }
 
 
@@ -547,11 +553,7 @@ body::before {
 }
 
 /* Responsive design */
-@media (max-width: 1024px) {
-    .node-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    
+@media (max-width: 1024px) { 
     #middle h1 {
         font-size: 3.5rem;
     }
@@ -597,9 +599,6 @@ body::before {
 }
 
 @media (max-width: 640px) {
-    .node-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
     
     #middle h1 {
         font-size: 2rem;

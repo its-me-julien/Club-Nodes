@@ -95,7 +95,7 @@ body::before {
 
 /* Updated Node Card Styling */
 .node-card img {
-    width: 100%;  /* Let the image fill its container */
+    width: 50%;  /* Let the image fill its container */
     height: auto;
     aspect-ratio: 1 / 1; /* Makes it a square */
     object-fit: cover;   /* Ensures the image covers the container nicely */
@@ -144,18 +144,17 @@ body::before {
     margin: 0 auto;
     background: transparent;
   }
-/* Loading screen */
-#loading {
-    width: 100vw;
-    height: 100vh;
-    position: fixed;
-    background: var(--navy);
-    z-index: 999;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-}
+  
+  .staking-section.loading {
+    filter: blur(10px);
+    opacity: 0;
+    transition: filter 0.5s ease, opacity 0.5s ease;
+  }
+  
+  .staking-section.loaded {
+    filter: blur(0);
+    opacity: 1;
+  }
 
 #spinner {
     animation: rotate 0.56s infinite linear;

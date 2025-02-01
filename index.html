@@ -57,34 +57,56 @@
 
           <h2>3 Earth Nodes, 3 tickers:</h2>
 
-        <div class="staking-section">
+          <div class="staking-section loading">
             <div class="node-grid">
-             
-          
-
               <div class="node-card special-border">
-                <img width="80"  height="80" src="https://github.com/its-me-julien/coffee_earth_nodes/blob/main/assets/club%20logo-min.png?raw=true" alt="New Node">
+                <img src="https://github.com/its-me-julien/coffee_earth_nodes/blob/main/assets/club%20logo-min.png?raw=true" alt="New Node">
                 <h4>[CLUB]</h4>
                 <p class="node-name">EN #1</p>
                 <p class="node-location">USA</p>
-            </div>
-
+              </div>
               <div class="node-card special-border">
-                <img width="80"  height="80" src="https://github.com/its-me-julien/coffee_earth_nodes/blob/main/assets/club%20logo-min.png?raw=true" alt="New Node">
+                <img src="https://github.com/its-me-julien/coffee_earth_nodes/blob/main/assets/club%20logo-min.png?raw=true" alt="New Node">
                 <h4>[HUB]</h4>
                 <p class="node-name">EN #555</p>
                 <p class="node-location">Pakistan</p>
-            </div>
-
-            <div class="node-card special-border">
-                <img width="80"  height="80" src="https://github.com/its-me-julien/coffee_earth_nodes/blob/main/assets/club%20logo-min.png?raw=true" alt="New Node">
+              </div>
+              <div class="node-card special-border">
+                <img src="https://github.com/its-me-julien/coffee_earth_nodes/blob/main/assets/club%20logo-min.png?raw=true" alt="New Node">
                 <h4>[TEAM]</h4>
                 <p class="node-name">EN #905</p>
                 <p class="node-location">Austria</p>
-            </div>
-
+              </div>
             </div>
           </div>
+          
+          <script>
+            document.addEventListener("DOMContentLoaded", function() {
+              const section = document.querySelector('.staking-section');
+              const images = section.querySelectorAll('img');
+              let loadedImages = 0;
+              
+              images.forEach(img => {
+                if (img.complete) {
+                  loadedImages++;
+                } else {
+                  img.addEventListener('load', () => {
+                    loadedImages++;
+                    if (loadedImages === images.length) {
+                      section.classList.remove("loading");
+                      section.classList.add("loaded");
+                    }
+                  });
+                }
+              });
+              
+              // If all images are already loaded
+              if (loadedImages === images.length) {
+                section.classList.remove("loading");
+                section.classList.add("loaded");
+              }
+            });
+          </script>
           
         
           <div style="width: 100%; display: flex; justify-content: center; margin: 2rem 0;">

@@ -430,22 +430,23 @@ body::before {
 }
 
 /* Node grid layout */
+
 .node-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Default to 3 items on desktops */
+    grid-template-columns: repeat(2, 1fr); /* 4 cards per row on desktop */
     gap: 1rem;
     margin: 0 auto;
 }
 
 @media (max-width: 1024px) {
     .node-grid {
-        grid-template-columns: repeat(2, 1fr); /* Adjust to 2 items for tablets */
+        grid-template-columns: repeat(2, 1fr); /* 2 cards per row on tablet */
     }
 }
 
 @media (max-width: 640px) {
     .node-grid {
-        grid-template-columns: repeat(1, 1fr); /* 1 item per row for mobile */
+        grid-template-columns: repeat(1, 1fr); /* 1 card per row on phone */
     }
 }
 

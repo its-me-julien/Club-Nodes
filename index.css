@@ -485,7 +485,7 @@ body::before {
 
 /* Special Border for the New Node */
 .special-border {
-    border: 2px solid var(--gradient-start);
+    border: none;
     padding: 0.5rem;
 }
 

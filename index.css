@@ -433,14 +433,14 @@ body::before {
 
 .node-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 4 cards per row on desktop */
+    grid-template-columns: repeat(4, 1fr); /* 4 cards per row on desktop */
     gap: 1rem;
     margin: 0 auto;
 }
 
 @media (max-width: 1024px) {
     .node-grid {
-        grid-template-columns: repeat(3, 1fr); /* 2 cards per row on tablet */
+        grid-template-columns: repeat(4, 1fr); /* 2 cards per row on tablet */
     }
 }
 

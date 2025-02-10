@@ -446,7 +446,7 @@ body::before {
 
 @media (max-width: 640px) {
     .node-grid {
-        grid-template-columns: repeat(1, 1fr); /* 1 card per row on phone */
+        grid-template-columns: repeat(2, 1fr); /* 1 card per row on phone */
     }
 }
 
@@ -459,7 +459,6 @@ body::before {
     text-align: center;
     box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
     transition: background 0.3s ease, transform 0.3s ease;
-    min-height: 250px; /* Adjust this value as needed */
 }
 
 

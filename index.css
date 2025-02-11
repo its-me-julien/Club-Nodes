@@ -1,7 +1,7 @@
 /* Import fonts */
 @font-face {
     font-family: 'Aeonik';
-    src: url('https://worldmobile.club/uploads/default/original/1X/55fc9e1587be9bb25dcf0295a5d258e7a586e6bd.otf') format('opentype');
+    src: url('/assets/bold.otf') format('opentype');
     font-weight: bold;
     font-style: normal;
     font-display: swap;
@@ -9,12 +9,11 @@
 
 @font-face {
     font-family: 'Aeonik';
-    src: url('https://worldmobile.club/uploads/default/original/1X/2a3b954437d34dfee57b46f092f7e222d805d445.otf') format('opentype');
+    src: url('/assets/regular.otf') format('opentype');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
 }
-
 @font-face {
     font-family: 'Aeonik Condensed';
     src: url('https://worldmobile.club/uploads/default/original/1X/4e21838cff760a5f72b6e3bde8c7dd410e21ce43.woff2') format('woff2');

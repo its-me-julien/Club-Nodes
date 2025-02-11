@@ -190,7 +190,7 @@ body::before {
 }
 
 .box2 {
-    background: var(--gradient-start);
+    background: var(--gradient-end);
     margin-left: -5px;
 }
 
@@ -409,7 +409,7 @@ body::before {
 
 .staking-benefits i {
     font-size: 1.25rem;
-    color: var(--gradient-start); /* Icon color consistent with theme */
+    color: var(--gradient-end); /* Icon color consistent with theme */
     flex-shrink: 0;
 }
 
@@ -540,7 +540,7 @@ body::before {
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: var(--gradient-start);
+    background: var(--gradient-end);
 }
 
 /* Selection */

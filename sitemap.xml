@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <!-- English Version -->
+    <url>
+        <loc>https://stake.worldmobile.club/</loc>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+
+    <!-- French Version -->
+    <url>
+        <loc>https://stake.worldmobile.club/fr</loc>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+
+    <!-- German Version -->
+    <url>
+        <loc>https://stake.worldmobile.club/de</loc>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+
+    <!-- Portuguese Version -->
+    <url>
+        <loc>https://stake.worldmobile.club/pt</loc>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+
+    <!-- Filipino Version -->
+    <url>
+        <loc>https://stake.worldmobile.club/fil</loc>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+
+    <!-- Spanish Version -->
+    <url>
+        <loc>https://stake.worldmobile.club/es</loc>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+</urlset>

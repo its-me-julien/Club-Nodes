@@ -62,3 +62,26 @@ setTimeout(function(){
       $("#box").css("display","none");
     },1000);
 },1500);
+
+
+document.addEventListener('DOMContentLoaded', function () {
+    const dropdownBtn = document.querySelector('.dropdown-btn');
+    const dropdownContent = document.querySelector('.dropdown-content');
+  
+    dropdownBtn.addEventListener('click', function (e) {
+      e.stopPropagation();
+      dropdownContent.classList.toggle('show');
+  
+      // Update ARIA attribute for accessibility
+      const expanded = dropdownBtn.getAttribute('aria-expanded') === 'true';
+      dropdownBtn.setAttribute('aria-expanded', !expanded);
+    });
+  
+    // Close dropdown if clicking outside
+    document.addEventListener('click', function (e) {
+      if (!dropdownContent.contains(e.target) && !dropdownBtn.contains(e.target)) {
+        dropdownContent.classList.remove('show');
+        dropdownBtn.setAttribute('aria-expanded', 'false');
+      }
+    });
+  });

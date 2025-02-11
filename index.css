@@ -648,13 +648,24 @@ body::before {
 
 .dropdown-content {
     display: none;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
     position: absolute;
     background-color: white;
     min-width: 160px;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
     border-radius: 5px;
     z-index: 100;
-}
+  }
+
+
+.dropdown-content.show {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
 
 .dropdown-content a {
     color: black;
